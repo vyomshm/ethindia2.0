@@ -2,6 +2,7 @@ import React from 'react';
 import Web3 from 'web3';
 import '../App.css';
 import Subscription from './Subscription';
+import logo from '../ethstudio.jpeg'
 
 let interval;
 
@@ -53,7 +54,7 @@ class App extends React.Component {
       }
 
       if(web3 != null) {
-        if(web3.currentProvider.connection.isMetaMask == true) {
+        if(web3.currentProvider.isMetaMask == true) {
           provider = 'METAMASK';
         } else if(web3.currentProvider.connection.isDapper == true) {
           provider = 'DAPPER';
@@ -117,7 +118,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div style={{margin: "5vh " }}> 
+          <div style={{margin: "10vh " }}> 
+            <h1> <b>ETH Studio: ZK based Privacy preserving Subscriptions using Range proofs powered by Aztec Protocol </b></h1>
+            <br/>
+            <img src={logo} alt="golf"/>
+            <br/><br/>
             Ethereum enabled: {connected.toString()} 
             <hr />
             Primary Web3 Provider : {provider}

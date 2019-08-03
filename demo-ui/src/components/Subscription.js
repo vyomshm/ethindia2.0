@@ -18,9 +18,9 @@ class Subscription extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="StackAmount">Stack Amount</Label>
-                        <Input type="text" name="amount" id="stackAmount" placeholder="Minimum stack amount of your token" />
+                        <Input type="text" name="amount" id="stackAmount" placeholder="Minimum stack amount" />
                     </FormGroup>
-                    <Button onClick={() => this.props.deployContract()}>Submit</Button>
+                    <Button onClick={() => this.props.deployContract()}>Deploy Subscription Contract</Button>
                 </Form>
             </Card>
         )
