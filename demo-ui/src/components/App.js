@@ -118,22 +118,25 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div style={{margin: "10vh " }}> 
-            <h1> <b>ETH Studio: ZK based Privacy preserving Subscriptions using Range proofs powered by Aztec Protocol </b></h1>
+          <div style={{margin: "5vh " }}> 
+            <img src={logo} alt="golf" style={{width: '10%', height: '10%', position: 'absolute', top: '5px', left: '5px'}}/>
+            <h3> ZK based Privacy preserving Subscriptions using Range proofs powered by Aztec Protocol  </h3>
             <br/>
-            <img src={logo} alt="golf"/>
-            <br/><br/>
-            Ethereum enabled: {connected.toString()} 
-            <hr />
-            Primary Web3 Provider : {provider}
-            <hr />
-            Secondary Web3 Provider : {injectedWeb3Provider}
-            <hr />
-            Network : {network}
-            <hr />
-            Accounts Locked : {accountsLocked.toString()} 
-            <hr />
-            Account : {account}
+            {/* <img src={logo} alt="golf"/> */}
+            <div style={{width: '20%'}}>
+              <br/><br/>
+              Ethereum enabled: {connected.toString()} 
+              <hr />
+              Primary Web3 Provider : {provider}
+              <hr />
+              Secondary Web3 Provider : {injectedWeb3Provider}
+              <hr />
+              Network : {network}
+              <hr />
+              Accounts Locked : {accountsLocked.toString()} 
+              <hr />
+              Account : {account}
+            </div>
           </div>
           <br />
           {message}

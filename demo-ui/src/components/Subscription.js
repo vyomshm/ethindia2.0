@@ -7,6 +7,7 @@ class Subscription extends React.Component {
     render() {
         return (
             <Card style={{padding: '20px', margin:'auto', maxHeight:'50vh', maxWidth:'50vw'}}>
+                <p > Subscription </p>
                 <Form>
                     <FormGroup>
                         <Label for="Subscription">Name</Label>
