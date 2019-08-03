@@ -1,6 +1,8 @@
-### EthStudio
+#EthStudio
+
 
 ![EthStudio](ethstudio.jpeg)
+
 
 # Subscriptions on Ethereum
 
