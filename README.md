@@ -1,3 +1,7 @@
+### EthStudio
+
+![EthStudio](https://ibb.co/R4s3X5r)
+
 # Subscriptions on Ethereum
 
 - Stake based Subscriptions - ZERO COST subscriptions to a paid product/service on the ethereum - Smart Contracts + Compound v2 Lending Platform
