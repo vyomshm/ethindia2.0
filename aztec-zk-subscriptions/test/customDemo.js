@@ -30,7 +30,8 @@ PrivateRange.abi = PrivateRangeInterface.abi;
 const { JoinSplitProof, MintProof, PrivateRangeProof } = aztec;
 
 contract("private subscriptions", async (accounts) => {
-	const sender = accounts[0];
+	const sender = accounts[0]; //???
+    
 	console.log({ sender });
 
 	const bob = secp256k1.accountFromPrivateKey(process.env.GANACHE_TESTING_ACCOUNT_0);

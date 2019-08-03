@@ -1,0 +1,108 @@
+import utils from '@aztec/dev-utils';
+
+const aztec = require('aztec.js');
+const dotenv = require('dotenv');
+dotenv.config();
+const secp256k1 = require('@aztec/secp256k1');
+const BN = require('bn.js');
+
+const ZkAssetMintable = artifacts.require('./ZkAssetMintable.sol');
+const JoinSplit = artifacts.require('@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol');
+
+const {
+  proofs: {
+    MINT_PROOF,
+    PRIVATE_RANGE_PROOF
+  },
+} = utils;
+
+const { padLeft, randomHex } = require('web3-utils');
+
+const PrivateRange = artifacts.require('./PrivateRange');
+const PrivateRangeInterface = artifacts.require('./PrivateRangeInterface');
+PrivateRange.abi = PrivateRangeInterface.abi;
+const ACE = artifacts.require('./ACE');
+
+const { JoinSplitProof, MintProof, PrivateRangeProof } = aztec;
+
+const subscriber = secp256k1.accountFromPrivateKey(process.env.GANACHE_TESTING_ACCOUNT_0);
+
+const getDefaultNotes = async () => {
+	const originalNote = await aztec.note.create(subscriber.publicKey, 1000);
+	const comparisonNote = await aztec.note.create(subscriber.publicKey, 100);
+	const utilityNote = await aztec.note.create(subscriber.publicKey, 900);
+    return { originalNote, comparisonNote, utilityNote };
+};
+
+
+contract("Privacy preserving Subscriptions", async (accounts) => {
+	const sender = accounts[0];
+
+	describe('Initialization', () => {
+        let ace;
+
+        beforeEach(async () => {
+            ace = await ACE.new({ from: sender });
+        });
+
+        it('should set the owner', async () => {
+            const owner = await ace.owner();
+            expect(owner).to.equal(sender);
+        });
+
+        it('should set the common reference string', async () => {
+            await ace.setCommonReferenceString(utils.constants.CRS, { from: sender });
+            const result = await ace.getCommonReferenceString();
+            expect(result).to.deep.equal(utils.constants.CRS);
+        });
+
+        it('should set a proof', async () => {
+            const privateRangeValidator = await PrivateRange.new({ from: sender });
+            await ace.setProof(PRIVATE_RANGE_PROOF, privateRangeValidator.address);
+            const resultValidatorAddress = await ace.getValidatorAddress(PRIVATE_RANGE_PROOF);
+            expect(resultValidatorAddress).to.equal(privateRangeValidator.address);
+        });
+    });
+
+    describe('Runtime', () => {
+        let ace;
+        let privateRangeValidator;
+        let proof;
+
+        beforeEach(async () => {
+            ace = await ACE.new({ from: sender });
+            await ace.setCommonReferenceString(utils.constants.CRS);
+            privateRangeValidator = await PrivateRange.new({ from: sender });;
+            await ace.setProof(PRIVATE_RANGE_PROOF, privateRangeValidator.address);
+
+            const { originalNote, comparisonNote, utilityNote } = await getDefaultNotes();
+            proof = new PrivateRangeProof(originalNote, comparisonNote, utilityNote, sender);
+        });
+
+
+        it('should read the validator address', async () => {
+            const validatorAddress = await ace.getValidatorAddress(PRIVATE_RANGE_PROOF);
+            expect(validatorAddress).to.equal(privateRangeValidator.address);
+        });
+
+        it('should increment the latest epoch', async () => {
+            const latestEpoch = new BN(await ace.latestEpoch()).add(new BN(1));
+            await ace.incrementLatestEpoch();
+            const newLatestEpoch = await ace.latestEpoch();
+            expect(newLatestEpoch.toString()).to.equal(latestEpoch.toString());
+        });
+
+        it('should validate a private range proof', async () => {
+            const data = proof.encodeABI(privateRangeValidator.address);
+            const { receipt } = await ace.validateProof(
+            	PRIVATE_RANGE_PROOF, 
+            	sender, 
+            	data
+            );
+            expect(receipt.status).to.equal(true);
+            const result = await ace.validatedProofs(proof.validatedProofHash);
+            expect(result).to.equal(true);
+        });
+    });
+});
+
