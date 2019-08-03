@@ -1,0 +1,26 @@
+{
+  "name": "@ethstudio/subscriptions",
+  "version": "0.0.1",
+  "description": "staked subscriptions on the blockchain, built at EthIndia2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyomshm/ethindia2.0.git"
+  },
+  "keywords": [
+    "Staking",
+    "Compound",
+    "Subscriptions",
+    "ZKProofs",
+    "Liquidity-Pools"
+  ],
+  "author": "Vyom Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vyomshm/ethindia2.0/issues"
+  },
+  "homepage": "https://github.com/vyomshm/ethindia2.0#readme"
+}
