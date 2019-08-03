@@ -1,6 +1,6 @@
 ### EthStudio
 
-![EthStudio](https://ibb.co/R4s3X5r)
+![EthStudio](ethstudio.jpeg)
 
 # Subscriptions on Ethereum
 
