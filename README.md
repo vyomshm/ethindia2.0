@@ -9,6 +9,10 @@
 - Stake based Subscriptions - ZERO COST subscriptions to a paid product/service on the ethereum - Smart Contracts + Compound v2 Lending Platform
 - ZK based Privacy preserving Subscriptions using Range proofs powered by Aztec Protocol
 
+### Contract on mainnet: 
+
+[Ethstudio] (https://etherscan.io/address/0x14b5286D41c219B5Dc6744dA8FACEa62043dDCBB)
+
 
 ### Tools and Technology used by Us
 
