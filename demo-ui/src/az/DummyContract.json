@@ -1,0 +1,836 @@
+{
+  "contractName": "DummyContract",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.4+commit.9549d8ff\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/vcrizpy/Desktop/dapps/ethindia2.0/aztec-zk-subscriptions/contracts/AceContracts.sol\":\"DummyContract\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[]},\"sources\":{\"/Users/vcrizpy/Desktop/dapps/ethindia2.0/aztec-zk-subscriptions/contracts/AceContracts.sol\":{\"keccak256\":\"0xe774c874bd049930ae1acd0b2861f3bb00681a8d155c3bd8ac72d0c5e6defcad\",\"urls\":[\"bzzr://9c18370d30f34330b3e7fb7e21db2e15937fce94f256063e30da382ea6770222\"]},\"@aztec/protocol/contracts/ACE/ACE.sol\":{\"keccak256\":\"0xa5f74acb3e4c278284d44ef6e11b470537260d3d9a94a6fa7b61fb186477ecb4\",\"urls\":[\"bzzr://48fe086b3d49efd624728d5050c37ca17f5962b5557a9ad60d49f2676812d747\"]},\"@aztec/protocol/contracts/ACE/NoteRegistry.sol\":{\"keccak256\":\"0x94c7db807c9b316de5886d134821fdaf539e3480e06e8a9434ec8903076d3f86\",\"urls\":[\"bzzr://498808929c46c420f6a2085fb5d86be827898ba759f8e53072b177aaad8193c8\"]},\"@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol\":{\"keccak256\":\"0x3a0708e00b6bbe2865f5b7986513b9adf51afe24122faab2be5290833a8af46a\",\"urls\":[\"bzzr://e70b525863cd177d557a2c3b5a86fad89b688953e8af1153370b0e15656df6e8\"]},\"@aztec/protocol/contracts/ACE/validators/dividend/DividendABIEncoder.sol\":{\"keccak256\":\"0x752982fad1e85379d574d6f9f4d64894883cefed27758cb875f920888e33722f\",\"urls\":[\"bzzr://cd0f91b9118c85b9b07f841c673c560dfdfe58ee13b4b03a248188d1e1b33c31\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol\":{\"keccak256\":\"0x8304cf7a8a81cf0084bf4005d677447b4a2c6fe700d4a9b3b431954e58a93396\",\"urls\":[\"bzzr://c748b5f7b5416ef4a8f2b4d5ad6391b25d198e3c398f543e62c154cbef79e9da\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplitABIEncoder.sol\":{\"keccak256\":\"0xdbb2cfbf88f4499b6134eb0bd167146e923750eb42474df2811c9c71e47d8e5e\",\"urls\":[\"bzzr://2b8b94a4907370caf514febf49d511d589bdfa191a76b7fce175339c9d03c834\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol\":{\"keccak256\":\"0x928e098ef8713819008deb70229aca9ef3a23d1d9fde6ccbe824ce1d6d2b3e0c\",\"urls\":[\"bzzr://0ae03d51bb9b251d8c5e74fbaa5bd1e9c414649d44318310dd8b4d3a73002793\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluidABIEncoder.sol\":{\"keccak256\":\"0xab788f2f01d6e8e85e4793c1dce1d205d07f8139a6dba264b36c2903dc5e4370\",\"urls\":[\"bzzr://c1a9b7761626a5b2247abda838a3fcbbdc8611f8e3b721ad56beda1d1484ef46\"]},\"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol\":{\"keccak256\":\"0xf48b9cc66dfea620323b0c4c0b51b03a7decf0523ea5fb9e2a5d71905fda4d89\",\"urls\":[\"bzzr://468ed9e88c99e91327e47132e352f448b41d87e88c630fc5ee711715729960cd\"]},\"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRangeABIEncoder.sol\":{\"keccak256\":\"0x84aea06f709c5c4db0fd02635b68cb225de1a17b640a0488976259c858200ac0\",\"urls\":[\"bzzr://242994a0a4799211482f62c8680ef005a82b993f11156c9b708f782e84d97bbe\"]},\"@aztec/protocol/contracts/ACE/validators/swap/Swap.sol\":{\"keccak256\":\"0x498a6f5ef97e37255ecf977c67719e009c7094a8eb52b5c5c9da9396eaa297ee\",\"urls\":[\"bzzr://1b38d9c02b3c83e1aa841a36e94e40ebb6a802f1bb2cb31b187deb9ae21ab8d8\"]},\"@aztec/protocol/contracts/ACE/validators/swap/SwapABIEncoder.sol\":{\"keccak256\":\"0x752233ffbfc5c5a42d4ab5b5e2aa307a72cfb2d98e82a86eaa01c932d62d0377\",\"urls\":[\"bzzr://01ecb245b5e443eb821d58debd3e2301df6eb21669564690e2ce2de083cffb38\"]},\"@aztec/protocol/contracts/ERC1724/ZkAsset.sol\":{\"keccak256\":\"0x224f97dda164b010f8c7ca63ba7f214b3dda3873267a107c063b6ba0bda6d9b5\",\"urls\":[\"bzzr://80ffd456eed74f6fe3fff5bb373dd07756596de128dfe0181e2eb4b703e4c12b\"]},\"@aztec/protocol/contracts/ERC1724/base/ZkAssetBase.sol\":{\"keccak256\":\"0x10d51d14855c784ca976b7028edcbb1fcb7e1d0ac2a3dec3907c89e8370642fd\",\"urls\":[\"bzzr://e54379fa59ea8a89937ad2cbd29d209bdeb6d95a2c8cfb0c3455834f6785e9f7\"]},\"@aztec/protocol/contracts/interfaces/DividendInterface.sol\":{\"keccak256\":\"0xa7cd3e6dc0fc62efa0d19c91257a50490265cd445ca7ddb20da8b184502b65c4\",\"urls\":[\"bzzr://1c8ada08b93b258257d28780e2bccc58ad501e884d20f2d64ff9edacacd0b9a8\"]},\"@aztec/protocol/contracts/interfaces/IAZTEC.sol\":{\"keccak256\":\"0xfb7c05699bd7b182e7dd81facb093bd430bbf5ab11c4ed86f7d8fe0e8d17ffde\",\"urls\":[\"bzzr://208d0f482e8af0c18a68a73d3efe0e557a71764ac32a0f88bdc8571b2235964d\"]},\"@aztec/protocol/contracts/interfaces/IZkAsset.sol\":{\"keccak256\":\"0x7d05bbe65423c3f8d2844a12f131607008d4130916f4aef2e1b471838acb4d63\",\"urls\":[\"bzzr://566d1cc152979de4135912836fea71cdddd92c6e2b391ac111c74b3485c433bc\"]},\"@aztec/protocol/contracts/interfaces/JoinSplitFluidInterface.sol\":{\"keccak256\":\"0x3b22b3b401c1d6dcbba190646c9ba7ee501df0445e57f9839539a4d214068494\",\"urls\":[\"bzzr://c60008f765791ddf2d253cf035847f221f9a9d6af26b9a8cb641d603e5def8a8\"]},\"@aztec/protocol/contracts/interfaces/JoinSplitInterface.sol\":{\"keccak256\":\"0xf1015f43f123f140ef54c23e5c5eec77a79c8330c0e39c11c6bbac5cb9d47aad\",\"urls\":[\"bzzr://d24cd2073a26ef0b6aeb39aa27babf7db03402c8483bc7490ffa2ad147058cd3\"]},\"@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol\":{\"keccak256\":\"0x7f4757b460c1e8f85be08d80280679102841a8c5b714c75d7a2021797b88939f\",\"urls\":[\"bzzr://1f454d54773d120bcfdea4f58d489cdd28d4e393c279d4bb0e2b8ecf3860135e\"]},\"@aztec/protocol/contracts/libs/LibEIP712.sol\":{\"keccak256\":\"0x105d65fa35288139cf0edb2749373df28800e31727a24c4923abf1eaf16486b0\",\"urls\":[\"bzzr://210a23f95cf0cba1fedc9d2c58f223f089a45fc35416e99fef2a89ee0723caaf\"]},\"@aztec/protocol/contracts/libs/NoteUtils.sol\":{\"keccak256\":\"0x10ff71793eb11637967308474a63033830f86960f28754438ce5073abe52dd2c\",\"urls\":[\"bzzr://0f08d33a2839e9f40eaebe3047adbcd7eb8d0a0d7c2cde433ac8978fbf765fb3\"]},\"@aztec/protocol/contracts/libs/ProofUtils.sol\":{\"keccak256\":\"0xce4dfdc9af28abe040d0ae2fdff1ed32b225623dac56597810f6076204ab2b9b\",\"urls\":[\"bzzr://5284bf722d4353c6f3bdad07ac35271580bbceba7646287bd36d01061c704807\"]},\"@aztec/protocol/contracts/libs/SafeMath8.sol\":{\"keccak256\":\"0x803d6f285fcf450aaf882189dd52c47860ca1f388db767b09c10239872f59d99\",\"urls\":[\"bzzr://cd4012c351b38f431f626bd330421dae25d4d6e36e11267f58a3a63f69951577\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzzr://d12a11272051eb6586de8f7e0a82c04a98c9984ce8b2a6cf1ee439f65aba29a9\"]},\"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x852793a3c2f86d336a683b30d688ec3dcfc57451af5a2bf5975cda3b7191a901\",\"urls\":[\"bzzr://07fb42206812a17c1f71e548cfa5cec6f9aa1ae0ca5df870718ca4aa9759d1a5\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820a1c4fbb064838adb627add6d1bdc08f0467974111b69bfe626606beb10dabb4b0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820a1c4fbb064838adb627add6d1bdc08f0467974111b69bfe626606beb10dabb4b0029",
+  "sourceMap": "767:27:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;767:27:0;;;;;;;",
+  "deployedSourceMap": "767:27:0:-;;;;;",
+  "source": "pragma solidity >= 0.5.0 <0.7.0;\n// import the aztec contracts so truffle compiles them\nimport \"@aztec/protocol/contracts/interfaces/IAZTEC.sol\";\nimport \"@aztec/protocol/contracts/ACE/ACE.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/swap/Swap.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol\";\nimport \"@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol\";\nimport \"@aztec/protocol/contracts/ERC1724/ZkAsset.sol\";\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\";\n\ncontract DummyContract {\n\n}\n\n/**\n * @title ERC20Mintable\n * @dev ERC20 minting logic\n * Sourced from OpenZeppelin and thoroughly butchered to remove security guards.\n * Anybody can mint - STRICTLY FOR TEST PURPOSES\n */\ncontract ERC20Mintable is ERC20 {\n    /**\n    * @dev Function to mint tokens\n    * @param _to The address that will receive the minted tokens.\n    * @param _value The amount of tokens to mint.\n    * @return A boolean that indicates if the operation was successful.\n    */\n    function mint(address _to, uint256 _value) public returns (bool) {\n        _mint(_to, _value);\n        return true;\n    }\n}\n\n// contract zkSubscriber is ZkAsset {\n// \tACE public ace;\n// \tevent DebugProofs(bytes _proofOutputs);\n// \tevent Hello(uint);\n// \tmapping(address => bytes32) proofHashes;\n\n// \tconstructor(\n// \t\taddress _aceAddress, \n// \t\taddress _linkedTokenAddress, \n// \t\tuint256 _scalingFactor\n// \t) public ZkAsset(_aceAddress, _linkedTokenAddress, _scalingFactor) {\n// \t\t// ??\n// \t}\n\n// \tfunction validateSubscriptionProof(uint24 _proof, address _sender, bytes calldata _data) external {\n// \t\temit Hello(89767);\n// \t\t// bytes memory proofOutputs = ace.validateProof(_proof, _sender, _data);\n// \t\t// emit DebugProofs(proofOutputs);\n// \t\t// bytes32 proofHash = keccak256(proofOutputs);\n// \t\t// update mapping\n// \t\t// proofHashes[_sender] = proofHash;\n// \t}\n\n// \tfunction isSubscribed() public view returns(bool){\n// \t\tif(proofHashes[msg.sender] != bytes32(0)) return true;\n// \t\treturn false;\n// \t}\n// }",
+  "sourcePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/aztec-zk-subscriptions/contracts/AceContracts.sol",
+  "ast": {
+    "absolutePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/aztec-zk-subscriptions/contracts/AceContracts.sol",
+    "exportedSymbols": {
+      "DummyContract": [
+        12
+      ],
+      "ERC20Mintable": [
+        32
+      ]
+    },
+    "id": 33,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/interfaces/IAZTEC.sol",
+        "file": "@aztec/protocol/contracts/interfaces/IAZTEC.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 3092,
+        "src": "88:57:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/ACE.sol",
+        "file": "@aztec/protocol/contracts/ACE/ACE.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 952,
+        "src": "146:47:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1723,
+        "src": "194:84:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
+        "id": 5,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1768,
+        "src": "279:64:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "id": 6,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1697,
+        "src": "344:74:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
+        "id": 7,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1674,
+        "src": "419:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "id": 8,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1746,
+        "src": "492:80:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+        "file": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+        "id": 9,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 3229,
+        "src": "573:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
+        "file": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
+        "id": 10,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1802,
+        "src": "646:55:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "id": 11,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 4164,
+        "src": "702:63:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12,
+        "linearizedBaseContracts": [
+          12
+        ],
+        "name": "DummyContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 33,
+        "src": "767:27:0"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13,
+              "name": "ERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4163,
+              "src": "1012:5:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20_$4163",
+                "typeString": "contract ERC20"
+              }
+            },
+            "id": 14,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1012:5:0"
+          }
+        ],
+        "contractDependencies": [
+          4163,
+          4232
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ERC20Mintable\n@dev ERC20 minting logic\nSourced from OpenZeppelin and thoroughly butchered to remove security guards.\nAnybody can mint - STRICTLY FOR TEST PURPOSES",
+        "fullyImplemented": true,
+        "id": 32,
+        "linearizedBaseContracts": [
+          32,
+          4163,
+          4232
+        ],
+        "name": "ERC20Mintable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 30,
+              "nodeType": "Block",
+              "src": "1327:56:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 24,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "1343:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "_value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18,
+                        "src": "1348:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 23,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4049,
+                      "src": "1337:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1337:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1337:18:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1372:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 22,
+                  "id": 29,
+                  "nodeType": "Return",
+                  "src": "1365:11:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function to mint tokens\n@param _to The address that will receive the minted tokens.\n@param _value The amount of tokens to mint.\n@return A boolean that indicates if the operation was successful.",
+            "id": 31,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1276:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1276:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1289:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1275:29:0"
+            },
+            "returnParameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1321:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1321:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1320:6:0"
+            },
+            "scope": 32,
+            "src": "1262:121:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 33,
+        "src": "986:399:0"
+      }
+    ],
+    "src": "0:2272:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/aztec-zk-subscriptions/contracts/AceContracts.sol",
+    "exportedSymbols": {
+      "DummyContract": [
+        12
+      ],
+      "ERC20Mintable": [
+        32
+      ]
+    },
+    "id": 33,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/interfaces/IAZTEC.sol",
+        "file": "@aztec/protocol/contracts/interfaces/IAZTEC.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 3092,
+        "src": "88:57:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/ACE.sol",
+        "file": "@aztec/protocol/contracts/ACE/ACE.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 952,
+        "src": "146:47:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1723,
+        "src": "194:84:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol",
+        "id": 5,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1768,
+        "src": "279:64:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "id": 6,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1697,
+        "src": "344:74:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol",
+        "id": 7,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1674,
+        "src": "419:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "id": 8,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1746,
+        "src": "492:80:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+        "file": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+        "id": 9,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 3229,
+        "src": "573:72:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
+        "file": "@aztec/protocol/contracts/ERC1724/ZkAsset.sol",
+        "id": 10,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 1802,
+        "src": "646:55:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "file": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "id": 11,
+        "nodeType": "ImportDirective",
+        "scope": 33,
+        "sourceUnit": 4164,
+        "src": "702:63:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12,
+        "linearizedBaseContracts": [
+          12
+        ],
+        "name": "DummyContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 33,
+        "src": "767:27:0"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13,
+              "name": "ERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4163,
+              "src": "1012:5:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20_$4163",
+                "typeString": "contract ERC20"
+              }
+            },
+            "id": 14,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1012:5:0"
+          }
+        ],
+        "contractDependencies": [
+          4163,
+          4232
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ERC20Mintable\n@dev ERC20 minting logic\nSourced from OpenZeppelin and thoroughly butchered to remove security guards.\nAnybody can mint - STRICTLY FOR TEST PURPOSES",
+        "fullyImplemented": true,
+        "id": 32,
+        "linearizedBaseContracts": [
+          32,
+          4163,
+          4232
+        ],
+        "name": "ERC20Mintable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 30,
+              "nodeType": "Block",
+              "src": "1327:56:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 24,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "1343:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "_value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18,
+                        "src": "1348:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 23,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4049,
+                      "src": "1337:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1337:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1337:18:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1372:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 22,
+                  "id": 29,
+                  "nodeType": "Return",
+                  "src": "1365:11:0"
+                }
+              ]
+            },
+            "documentation": "@dev Function to mint tokens\n@param _to The address that will receive the minted tokens.\n@param _value The amount of tokens to mint.\n@return A boolean that indicates if the operation was successful.",
+            "id": 31,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1276:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1276:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1289:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1275:29:0"
+            },
+            "returnParameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 31,
+                  "src": "1321:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1321:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1320:6:0"
+            },
+            "scope": 32,
+            "src": "1262:121:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 33,
+        "src": "986:399:0"
+      }
+    ],
+    "src": "0:2272:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.6",
+  "updatedAt": "2019-08-04T06:44:33.359Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

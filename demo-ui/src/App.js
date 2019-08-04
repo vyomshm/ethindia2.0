@@ -8,6 +8,8 @@ import logo from './ethstudio.jpeg'
 import SubscriptionsRegistry from './contracts/SubscriptionsRegistry.json';
 import SubscriberContract from './contracts/SubscriberContract.json';
 
+import ValidateProof from './components/ValidateProof';
+
 const MAINNET_REGISTRY = "0x14b5286D41c219B5Dc6744dA8FACEa62043dDCBB";
 
 let interval;
@@ -176,6 +178,7 @@ class App extends React.Component {
   }
 
   render(){
+    let view = this.state.view;
     let {connected, account, provider, network, accountsLocked, injectedWeb3Provider, diffProvidersDetected } = this.state;
 
     let message = diffProvidersDetected == true ? <div style={{color: 'red'}}> Alert : Two different web3 providers <hr /> Go to chrome://extensions/  and turn one off !!!! </div> : <br />;
@@ -184,16 +187,36 @@ class App extends React.Component {
       <br />
       <h1> Configure your subscription service contract </h1>
       <br />
-      
-        <Subscription 
-          className="mt-5" 
-          style={{marginTop: "20px"}} 
-          account={this.state.account}
-          deployContract={this.deployContract}
-        />
 
-      <button onClick={()=>this.switchView('zk')}> zk </button>
-      <button onClick={()=>this.switchView('zk')}> launch </button>
+        {(
+            ()=>{
+              switch(view) {
+                case 'main':
+                return (
+                  <Subscription 
+                    className="mt-5" 
+                    style={{marginTop: "20px"}} 
+                    account={this.state.account}
+                    deployContract={this.deployContract}
+                  />
+                );
+                case 'zk':
+                return <ValidateProof web3={this.state.web3} />
+                case 'exchange':
+                return <div>exchange <br/></div>
+                case 'default':
+                return <div>err <br/></div>
+              }
+            }
+           )()
+          }
+      
+        
+
+        <div style={{position: 'absolute', top:0}}>
+          <button onClick={()=>this.switchView('zk')}> zk </button>
+          <button onClick={()=>this.switchView('main')}> launch </button>
+        </div>
       </div>
 
 
