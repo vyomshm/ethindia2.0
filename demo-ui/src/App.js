@@ -1,6 +1,8 @@
 import React from 'react';
 import Web3 from 'web3';
 import './App.css';
+import Subscription from './components/Subscription'
+import PublisherDeploy from './components/PublisherDeploy'
 
 let interval;
 
@@ -133,6 +135,7 @@ class App extends React.Component {
           {message}
           <br />
         </header>
+        <Subscription />
       </div>
     );
   }
