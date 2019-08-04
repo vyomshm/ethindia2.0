@@ -50,9 +50,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\n// Compound finance comptroller\ninterface Comptroller {\n  function enterMarkets(address[] calldata cTokens) external returns (uint[] memory);\n  function markets(address cToken) external view returns (bool isListed, uint256 collateralFactorMantissa);\n}",
-  "sourcePath": "/Users/chirag/work/ethindia/hackathon/ethindia2.0/contracts/interfaces/Comptroller.sol",
+  "sourcePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/contracts/interfaces/Comptroller.sol",
   "ast": {
-    "absolutePath": "/Users/chirag/work/ethindia/hackathon/ethindia2.0/contracts/interfaces/Comptroller.sol",
+    "absolutePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/contracts/interfaces/Comptroller.sol",
     "exportedSymbols": {
       "Comptroller": [
         613
@@ -306,7 +306,7 @@
     "src": "0:285:4"
   },
   "legacyAST": {
-    "absolutePath": "/Users/chirag/work/ethindia/hackathon/ethindia2.0/contracts/interfaces/Comptroller.sol",
+    "absolutePath": "/Users/vcrizpy/Desktop/dapps/ethindia2.0/contracts/interfaces/Comptroller.sol",
     "exportedSymbols": {
       "Comptroller": [
         613
@@ -564,8 +564,8 @@
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.9",
-  "updatedAt": "2019-08-04T00:49:27.544Z",
+  "schemaVersion": "3.0.6",
+  "updatedAt": "2019-08-04T03:30:07.786Z",
   "devdoc": {
     "methods": {}
   },

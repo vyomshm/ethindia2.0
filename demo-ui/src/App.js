@@ -5,6 +5,10 @@ import Subscription from './components/DeploySubscription'
 import PublisherDeploy from './components/PublisherDeploy'
 import ValidateSubscription from './components/ValidateSubscription'
 import logo from './ethstudio.jpeg'
+import SubscriptionsRegistry from './contracts/SubscriptionsRegistry.json';
+import SubscriberContract from './contracts/SubscriberContract.json';
+
+const MAINNET_REGISTRY = "0x14b5286D41c219B5Dc6744dA8FACEa62043dDCBB";
 
 let interval;
 
@@ -30,6 +34,7 @@ class App extends React.Component {
     account: "",
     injectedWeb3Provider: null,
     diffProvidersDetected: false,
+    view:'main'
   }
 
   pollForNetwork = async () => {
@@ -113,14 +118,85 @@ class App extends React.Component {
     clearInterval(interval);
   }
 
+  deployContract = async (name, symbol, stake, platform) => {
+    let contract;
+    let tx;
+    let web3 = this.state.web3;
+    if(!this.state.web3) {
+      web3 = new Web3(window.web3);
+    } else {
+      web3 = this.state.web3;
+    }
+
+    // console.log(SubscribeContract.bytecode);
+    // const bt = SubscribeContract.bytecode;
+    // try {
+    //   let tx;
+    //   // console.log(SubscribeContract);
+    //   tx = await web3.eth.Contract(JSON.parse(SubscribeContract.abi))
+    //     .deploy({
+    //       data: '0x' + SubscribeContract.bytecode,
+    //       arguments: ["Netflix", "NTF", 100],
+    //     })
+    //     .send({
+    //       from: this.state.account,
+    //     });
+
+    //   console.log(tx)
+    // }catch(err) {
+    //   console.log(err);
+    // }
+
+    try {
+      // console.log(SubscribeContract);
+      contract = new web3.eth.Contract(SubscriptionsRegistry.abi, MAINNET_REGISTRY, {
+        from: this.state.account
+      });
+
+      tx = await contract.methods.createSubscriberContract(
+        name || "EthFlix2.0",
+        symbol || "EFX",
+        stake || 5000000000000000000,
+        platform || "0x0DBcCB2F2B16926dD60770ff72C6bF6E5cAb3CBE"
+      ).send({
+        from: this.state.account
+      });
+
+      console.log(tx);
+
+      this.setState({ tx });
+    }catch(err) {
+      console.log(err);
+    }
+  }
+
+
+  switchView = (view)=>{
+    this.setState({view});
+  }
+
   render(){
     let {connected, account, provider, network, accountsLocked, injectedWeb3Provider, diffProvidersDetected } = this.state;
 
     let message = diffProvidersDetected == true ? <div style={{color: 'red'}}> Alert : Two different web3 providers <hr /> Go to chrome://extensions/  and turn one off !!!! </div> : <br />;
     return (
-      <div className="App">
-        <Subscription />
+      <div className="App pb-2" >
+      <br />
+      <h1> Configure your subscription service contract </h1>
+      <br />
+      
+        <Subscription 
+          className="mt-5" 
+          style={{marginTop: "20px"}} 
+          account={this.state.account}
+          deployContract={this.deployContract}
+        />
+
+      <button onClick={()=>this.switchView('zk')}> zk </button>
+      <button onClick={()=>this.switchView('zk')}> launch </button>
       </div>
+
+
     );
   }
 }
