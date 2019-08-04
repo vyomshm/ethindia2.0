@@ -1,4 +1,3 @@
-
 pragma solidity >= 0.5.0 <0.7.0;
 // import the aztec contracts so truffle compiles them
 import "@aztec/protocol/contracts/interfaces/IAZTEC.sol";
@@ -35,32 +34,31 @@ contract ERC20Mintable is ERC20 {
     }
 }
 
-contract zkSubscriber is ZkAsset {
-	ACE public ace;
-	event DebugProofs(bytes _proofOutputs);
-	event Hello(uint);
-	mapping(address => bytes32) proofHashes;
+// contract zkSubscriber is ZkAsset {
+// 	ACE public ace;
+// 	event DebugProofs(bytes _proofOutputs);
+// 	event Hello(uint);
+// 	mapping(address => bytes32) proofHashes;
 
-	constructor(
-		address _aceAddress, 
-		address _linkedTokenAddress, 
-		uint256 _scalingFactor
-	) public ZkAsset(_aceAddress, _linkedTokenAddress, _scalingFactor) {
-		// ??
-	}
+// 	constructor(
+// 		address _aceAddress, 
+// 		address _linkedTokenAddress, 
+// 		uint256 _scalingFactor
+// 	) public ZkAsset(_aceAddress, _linkedTokenAddress, _scalingFactor) {
+// 		// ??
+// 	}
 
-	function validateSubscriptionProof(uint24 _proof, address _sender, bytes calldata _data) external {
-		emit Hello(89767);
-		// bytes memory proofOutputs = ace.validateProof(_proof, _sender, _data);
-		// emit DebugProofs(proofOutputs);
-		// bytes32 proofHash = keccak256(proofOutputs);
-		// update mapping
-		// proofHashes[_sender] = proofHash;
-	}
+// 	function validateSubscriptionProof(uint24 _proof, address _sender, bytes calldata _data) external {
+// 		emit Hello(89767);
+// 		// bytes memory proofOutputs = ace.validateProof(_proof, _sender, _data);
+// 		// emit DebugProofs(proofOutputs);
+// 		// bytes32 proofHash = keccak256(proofOutputs);
+// 		// update mapping
+// 		// proofHashes[_sender] = proofHash;
+// 	}
 
-	function isSubscribed() public view returns(bool){
-		if(proofHashes[msg.sender] != bytes32(0)) return true;
-		return false;
-	}
-}
-
+// 	function isSubscribed() public view returns(bool){
+// 		if(proofHashes[msg.sender] != bytes32(0)) return true;
+// 		return false;
+// 	}
+// }

@@ -6,11 +6,6 @@ import "@aztec/protocol/contracts/ERC1724/ZkAsset.sol";
 
 
 contract ZkSubscriber is ZkAsset {
-	event DebugProofs(bytes _proofOutputs);
-	event Hello(uint word);
-	event Sender(address senderAddress);
-	event ProofID(uint _proof);
-	event Data(bytes _data);
 	mapping(address => bytes32) proofHashes;
 
 	constructor(
@@ -20,18 +15,18 @@ contract ZkSubscriber is ZkAsset {
 	) public ZkAsset(_aceAddress, _linkedTokenAddress, _scalingFactor) {
 	}
 
-	function validateSubscriptionProof(uint24 _proof, bytes calldata _data) external returns(bool) {
-		bytes memory proofOutputs = ace.validateProof(_proof, msg.sender, _data);
+	function validateSubscriptionProof(uint24 _proof, address _sender, bytes calldata _data) external returns(bool) {
+		bytes memory proofOutputs = ace.validateProof(_proof, _sender, _data);
 		// return proofOutputs;
 		// emit DebugProofs(proofOutputs);
 		bytes32 proofHash = keccak256(proofOutputs);
 		// update mapping
-		proofHashes[msg.sender] = proofHash;
+		proofHashes[_sender] = proofHash;
 		return true;
 	}
 
-	function isSubscribed() public view returns(bool){
-		if(proofHashes[msg.sender] != bytes32(0)) return true;
+	function isSubscribed(address sender) public view returns(bool){
+		if(proofHashes[sender] != bytes32(0)) return true;
 		return false;
 	}
 }

@@ -113,19 +113,36 @@ contract("Privacy preserving Subscriptions", async (accounts) => {
             expect(receipt.status).to.equal(true);
         });
 
-        it("should validate a conclusive proof of sub", async () => {
-            // TO-DO
-        });
+        // it("should validate a conclusive proof of sub", async () => {
+        //     // TO-DO
+        // });
 
         it("should deploy the ZkSubscriber contract", async () => {
+            console.log('entered next test');
             expect(zkSubContract.address != null).to.equal(true);
         });
 
         it("should validate proof", async () => {
             const data = proof.encodeABI(zkSubContract.address);
 
-            const result = await zkSubContract.validateSubscriptionProof.call(PRIVATE_RANGE_PROOF, data, {from: sender});
+            const result = await zkSubContract.validateSubscriptionProof.call(PRIVATE_RANGE_PROOF, subscriber.address, data, {from: sender});
             assert.equal(result, true);
+        });
+
+        it("should check if user is subscribed", async () => {
+            // console.log({sender});
+            // console.log(subscriber.publicKey);
+
+            // let zk = await zkSubContract.deployed();
+            let isSubs = await zkSubContract.isSubscribed(subscriber.address);
+            console.log(isSubs);
+
+            const data = proof.encodeABI(zkSubContract.address);
+            const result = await zkSubContract.validateSubscriptionProof.call(PRIVATE_RANGE_PROOF, subscriber.address, data, {from: sender});
+            assert.equal(result, true);
+
+            isSubs = await zkSubContract.isSubscribed(subscriber.address);
+            console.log(isSubs);
         });
 
     });
