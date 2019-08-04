@@ -1,8 +1,9 @@
 import React from 'react';
 import Web3 from 'web3';
 import './App.css';
-import Subscription from './components/Subscription'
+import Subscription from './components/DeploySubscription'
 import PublisherDeploy from './components/PublisherDeploy'
+import ValidateSubscription from './components/ValidateSubscription'
 import logo from './ethstudio.jpeg'
 
 let interval;
@@ -118,27 +119,6 @@ class App extends React.Component {
     let message = diffProvidersDetected == true ? <div style={{color: 'red'}}> Alert : Two different web3 providers <hr /> Go to chrome://extensions/  and turn one off !!!! </div> : <br />;
     return (
       <div className="App">
-        <header className="App-header">
-          <div style={{margin: "5vh " }}> 
-            <img src={logo} alt="golf" style={{width: '10%', height: '10%', position: 'absolute', top: '10px', left: '5px'}}/>
-            <h3> ZK based Privacy preserving Subscriptions using Range proofs powered by Aztec Protocol  </h3>
-            <br/>
-            Ethereum enabled: {connected.toString()} 
-            <hr />
-            Primary Web3 Provider : {provider}
-            <hr />
-            Secondary Web3 Provider : {injectedWeb3Provider}
-            <hr />
-            Network : {network}
-            <hr />
-            Accounts Locked : {accountsLocked.toString()} 
-            <hr />
-            Account : {account}
-          </div>
-          <br />
-          {message}
-          <br />
-        </header>
         <Subscription />
       </div>
     );
