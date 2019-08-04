@@ -11,7 +11,11 @@
 
 ### Contract on mainnet: 
 
-[Ethstudio] (https://etherscan.io/address/0x14b5286D41c219B5Dc6744dA8FACEa62043dDCBB)
+ [Ethstudio](https://etherscan.io/address/0x14b5286D41c219B5Dc6744dA8FACEa62043dDCBB)
+
+###  The Subscription Economy:
+
+In the years following the 2008 crisis, subscription-model companies emerged in droves. Recognizing consumers’ preference for the financial consistency of purchasing a small amount over a longer period of time, innovators applied the subscription model to product “boxes,” household goods, media streaming services, and software products. And the innovation has paid off. B2C subscription businesses attracted more than 11 million customers in 2017, and more than 2,000 B2C subscription companies existed as of the end of the year. Since 2014, visitation to subscription company websites has increased more than 800%, with 37 million visitors. A McKinsey study in February of 2018 determined that 15% of online shoppers had subscribed to an e-commerce subscription over the past year. Notably, the streaming-media services (Netflix, etc.) had converted 46% of online shoppers into subscription customers. - ConsenSys Media
 
 
 ### Tools and Technology used by Us
