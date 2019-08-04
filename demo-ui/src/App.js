@@ -52,9 +52,9 @@ class App extends React.Component {
       }
 
       if(web3 != null) {
-        if(web3.currentProvider.connection.isMetaMask == true) {
+        if(web3.currentProvider.isMetaMask == true) {
           provider = 'METAMASK';
-        } else if(web3.currentProvider.connection.isDapper == true) {
+        } else if(web3.currentProvider.isDapper == true) {
           provider = 'DAPPER';
         } else {
           provider = 'UNKNOWN';
