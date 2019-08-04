@@ -42,3 +42,9 @@ Contributing team Members (with LinkedIn Website):
 2. [Chirag Maliwal](https://linkedin.com/in/chirag-maliwal-92796a107)
 
 3. [Shivam Kohli](https://www.linkedin.com/in/shivam-kohli-63670210a/)
+
+
+### Contribution:
+
+We built this in a weekend!You should inspect our smart contract before using.
+100% free and open source! Please contribute! Cheers from `Ethstudio` team.

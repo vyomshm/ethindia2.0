@@ -1,0 +1,33 @@
+### Instructions to setup project and run locally:
+
+AZTEC Protocol:
+
+1. Install the dependencies `cd aztec-zk-subscriptions && yarn install`
+
+2. Rename the `.env` file  `mv RENAME_ME.env .env`
+
+3. Start up Ganache `yarn start` (This will create 5 test ethereum accounts from the credentials in `.env`)
+
+4. Compile the contracts `truffle compile --all`
+
+5. Deploy! `yarn migrate`
+
+6. Run the private payment demo `truffle test test/demo.js`
+
+7. Run our custom POC demo - `truffle test test/customDemo.js`
+
+
+EthStudio Contracts:
+
+1. Compile the contracts `truffle compile --all`
+2. Deploy! `truffle migrate`
+
+
+Front end:
+
+1. Installation: `cd demo-ui && yarn`
+
+2. Run: `yarn start`
+
+Note: project will start on `http://localhost:3000/`
+
