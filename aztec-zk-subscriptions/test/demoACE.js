@@ -22,6 +22,8 @@ const PrivateRange = artifacts.require('./PrivateRange');
 const PrivateRangeInterface = artifacts.require('./PrivateRangeInterface');
 PrivateRange.abi = PrivateRangeInterface.abi;
 const ACE = artifacts.require('./ACE');
+const ZkSubscriber = artifacts.require('./ZkSubscriber');
+const ERC20Mintable = artifacts.require('./ERC20Mintable');
 
 const { JoinSplitProof, MintProof, PrivateRangeProof } = aztec;
 
@@ -69,14 +71,23 @@ contract("Privacy preserving Subscriptions", async (accounts) => {
         let privateRangeValidator;
         let proof;
 
+        let zkSubContract;
+        let erc20;
+
         beforeEach(async () => {
             ace = await ACE.new({ from: sender });
+            erc20 = await ERC20Mintable.new({ sender });
             await ace.setCommonReferenceString(utils.constants.CRS);
             privateRangeValidator = await PrivateRange.new({ from: sender });;
             await ace.setProof(PRIVATE_RANGE_PROOF, privateRangeValidator.address);
 
             const { originalNote, comparisonNote, utilityNote } = await getDefaultNotes();
             proof = new PrivateRangeProof(originalNote, comparisonNote, utilityNote, sender);
+            zkSubContract = await ZkSubscriber.new(
+                ace.address, 
+                erc20.address, 
+                new BN(10)
+            );
         });
 
 
@@ -100,9 +111,36 @@ contract("Privacy preserving Subscriptions", async (accounts) => {
             	data
             );
             expect(receipt.status).to.equal(true);
-            const result = await ace.validatedProofs(proof.validatedProofHash);
-            expect(result).to.equal(true);
         });
+
+        it("should validate a conclusive proof of sub", async () => {
+            // TO-DO
+        });
+
+        it("should deploy the ZkSubscriber contract", async () => {
+            expect(zkSubContract.address != null).to.equal(true);
+        });
+
+        it("should validate proof", async () => {
+            const data = proof.encodeABI(zkSubContract.address);
+
+            const result = await zkSubContract.validateSubscriptionProof.call(PRIVATE_RANGE_PROOF, data, {from: sender});
+            assert.equal(result, true);
+        });
+
     });
 });
+
+
+// import the aztec contracts so truffle compiles them
+// import "@aztec/protocol/contracts/interfaces/IAZTEC.sol";
+// import "@aztec/protocol/contracts/ACE/ACE.sol";
+// import "@aztec/protocol/contracts/ACE/validators/joinSplitFluid/JoinSplitFluid.sol";
+// import "@aztec/protocol/contracts/ACE/validators/swap/Swap.sol";
+// import "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol";
+// import "@aztec/protocol/contracts/ACE/validators/dividend/Dividend.sol";
+// import "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol";
+// import "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol";
+// import "@aztec/protocol/contracts/ERC1724/ZkAsset.sol";
+// import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 
